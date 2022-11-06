@@ -1,33 +1,18 @@
 #pragma once
 #include<iostream>
+#include <utility>
 #include <vector>
 
-class Poly 
+class Poly
 {
 public:
 	std::vector<double> coef = {};
 	Poly() = default;
-	Poly(std::vector<double> coef);
-	Poly operator + (Poly p);
-	Poly operator - (Poly p);
-	Poly operator * (Poly p);
+	explicit Poly(std::vector<double> coef1) : coef(std::move(coef1)) {};
+	Poly operator + (const Poly& p);
+	Poly operator - (const Poly& p);
+	Poly operator * (const Poly& p);
 	Poly der();
 	Poly integral();
-	//void calculator();
-	//void print_poly();
 
 };
-//std::ostream& operator<<(std::ostream& strm,Poly(res))
-//{
-//	strm << "Polynom\n";
-//	for (int i = 0; i < p.coef.size(); i++) {
-//
-//		strm << "X ^ ";
-//		strm << i;
-//		strm << " = ";
-//		strm << p.Coefficients[i];
-//		strm << "\n";
-//	}
-//
-//	return strm;
-//}
