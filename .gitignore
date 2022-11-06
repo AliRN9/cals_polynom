@@ -1,3 +1,5 @@
 .vs
+.idea
 build
 out
+cmake-build-debug

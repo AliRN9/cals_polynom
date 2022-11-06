@@ -9,6 +9,7 @@ public:
 	std::vector<double> coef = {};
 	Poly() = default;
 	explicit Poly(std::vector<double> coef1) : coef(std::move(coef1)) {};
+    Poly(std::string params);
 	Poly operator + (const Poly& p);
 	Poly operator - (const Poly& p);
 	Poly operator * (const Poly& p);
@@ -16,3 +17,5 @@ public:
 	Poly integral();
 
 };
+
+std::ostream & operator<<(std::ostream &, Poly p);
